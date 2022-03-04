@@ -11,3 +11,5 @@ downstream/runs/*
 runs/*
 interpretability/*
 xing_han/interpretability/*
+/data/*
+*.DS_Store
