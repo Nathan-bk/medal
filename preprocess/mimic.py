@@ -10,8 +10,8 @@ from sklearn.model_selection import train_test_split
 tqdm.pandas()
 
 parser = argparse.ArgumentParser()
-parse.add_argument("--mimic_dir", help="The directory contaning all the required MIMIC files (ADMISSIONS, PATIENTS, DIAGNOSES_ICD, PROCEDURES_ICD, NOTEEVENTS).")
-parse.add_argument("--save_dir", help="The directory where you want to save the processed files.")
+parser.add_argument("--mimic_dir", help="The directory contaning all the required MIMIC files (ADMISSIONS, PATIENTS, DIAGNOSES_ICD, PROCEDURES_ICD, NOTEEVENTS).")
+parser.add_argument("--save_dir", help="The directory where you want to save the processed files.")
 args = parser.parse_args()
 
 
@@ -25,7 +25,7 @@ raw_notes = pd.read_csv(args.mimic_dir + "NOTEEVENTS.csv")
 
 # First only keep the admission IDs that are in the notes as well
 adm = raw_adm.copy()
-adm_in_notes = notes.HADM_ID.unique()
+adm_in_notes = raw_notes.HADM_ID.unique()
 adm = adm[adm.HADM_ID.isin(adm_in_notes)]
 
 

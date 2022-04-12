@@ -13,3 +13,6 @@ interpretability/*
 xing_han/interpretability/*
 /data/*
 *.DS_Store
+*.csv
+*.pt
+*configs.txt

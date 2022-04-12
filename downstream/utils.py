@@ -24,6 +24,8 @@ def load_mimic_mortality(data_dir, data_filename):
     valid = pd.read_csv(os.path.join(data_dir, 'valid', data_filename), engine='c')
     test = pd.read_csv(os.path.join(data_dir, 'test', data_filename), engine='c')
 
+    print(train.head())
+
     train['LABEL_NUM'] = train.HOSPITAL_EXPIRE_FLAG.astype(np.float32)
     valid['LABEL_NUM'] = valid.HOSPITAL_EXPIRE_FLAG.astype(np.float32)
     test['LABEL_NUM'] = test.HOSPITAL_EXPIRE_FLAG.astype(np.float32)
