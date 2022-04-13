@@ -11,6 +11,7 @@ from utils import load_mimic_mortality, load_mimic_diagnosis, load_model, predic
 from lstm import RNN
 from lstm_sa import RNNAtt
 from electra import Electra
+import pandas as pd
 
 from tokenizer_and_dataset import FastTextTokenizer, MimicDataset, HuggingfaceDataset
 
