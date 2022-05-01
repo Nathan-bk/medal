@@ -16,3 +16,4 @@ xing_han/interpretability/*
 *.csv
 *.pt
 *configs.txt
+*.png
