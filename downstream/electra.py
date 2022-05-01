@@ -37,6 +37,7 @@ class Electra(nn.Module):
     def forward(self, sents):
         sents = torch.tensor(sents).to(self.device)
         sents = self.electra(sents)[0]
+        # sents, att = self.electra(sents, output_attentions=True)
         # out = torch.max(sents, dim=1)[0]    # try max pooling
         _, out = self.cls_att(key=sents, query=self.cls_query, value=sents)
-        return torch.sigmoid(self.output(out)).squeeze()
+        return torch.sigmoid(self.output(out)).squeeze()#, att
